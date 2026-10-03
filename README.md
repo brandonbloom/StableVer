@@ -1,15 +1,18 @@
 # StableVer
 
-Version 1.0
+Version 1.0.1
 
 This document describes the "StableVer" versioning scheme. Like SemVer and related schemes,
 major version numbers convey semantic information about breaking changes. Unlike SemVer,
 StableVer discourages breaking changes by adding semantics regarding feature stability,
 deprecation, and migrations.
 
-Version numbers have the short form:
+Version numbers have the form:
 
-`<major>.<minor>`
+`<major>.<minor>.<patch>`
+
+The short form `<major>.<minor>` is equivalent to `<major>.<minor>.0`. Precedence,
+pre-release, and build metadata follow SemVer 2.0.
 
 Breaking changes may only be introduced in major version bumps. However, no breaking change
 may be made to a feature unless it was declared deprecated in the _previous_ major version bump.
@@ -58,9 +61,10 @@ For major version 1 and up, all _documented_ features are considered _stable_,
 unless otherwise indicated. All _undocumented_ functionality is considered
 _internal_.
 
-Non-breaking bug fixes and _unstable_ features may be added or modified in any minor version
-release. Bug fixes may introduce breaking changes within the _undefined_ portion of _stable_
-features, but should be accompanied by guidance.
+Patch releases may contain only non-breaking bug fixes. Minor releases may also add
+_stable_ features and add or modify _unstable_ features. Bug fixes in either may
+introduce breaking changes within the _undefined_ portion of _stable_ features,
+but should be accompanied by guidance.
 
 Major version bumps _may_ be used for marketing purposes, even if there are no new deprecations
 or feature removals. This capacity should not be used to avoid providing sufficient migration
